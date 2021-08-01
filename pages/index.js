@@ -7,6 +7,7 @@ import Dashboard from '../components/Dashboard/Dashboard';
 import Preferences from '../components/Preferences/Preferences';
 import App from "./App.js"
 
+// This needs fixed here, I need to research which to use with next.js
 ReactDOM.render(
   <Provider store={store}>
     <App />
