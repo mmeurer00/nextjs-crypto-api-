@@ -2,6 +2,17 @@ import Head from "next/head";
 import CoinsListContainer from "../components/Coins/CoinsListContainer";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar/SearchBar";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Dashboard from '../components/Dashboard/Dashboard';
+import Preferences from '../components/Preferences/Preferences';
+import App from "./App.js"
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>, 
+  document.getElementById('root')
+);
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -13,8 +24,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <SearchBar type="text" placeholder="search" /> */}
-      <SearchBar props={{ query, setQuery }} />
-      <CoinsListContainer props={{ query }} />
+      {/* <SearchBar props={{ query, setQuery }} />
+      <CoinsListContainer props={{ query }} /> */}
+      <App/>
     </div>
   );
 }
